@@ -1,16 +1,18 @@
-FROM postgres:13
+FROM postgres:15-bullseye
 
 RUN apt-get update --fix-missing && apt-get install -y \
         gcc \
         libreadline-dev \
         libssl-dev \
+        libzstd-dev \
+        liblz4-dev \
         make \
         postgresql-common \
         postgresql-server-dev-$PG_MAJOR \
         unzip \
         wget \
         zlib1g-dev \
-    && wget -q -O pg_repack.zip "https://api.pgxn.org/dist/pg_repack/1.4.7/pg_repack-1.4.7.zip" \
+    && wget -q -O pg_repack.zip "https://api.pgxn.org/dist/pg_repack/1.5.0/pg_repack-1.5.0.zip" \
     && unzip pg_repack.zip && rm pg_repack.zip \
     && cd pg_repack-* \
     && make \
@@ -18,9 +20,12 @@ RUN apt-get update --fix-missing && apt-get install -y \
     && cd .. \
     && rm -rf pg_repack-* \
     && apt-get remove --auto-remove -y \
+        dirmngr \
         gcc \
         libreadline-dev \
         libssl-dev \
+        libzstd-dev \
+        liblz4-dev \
         make \
         unzip \
         wget \
