@@ -13,6 +13,8 @@ Each image is published as:
 fuhrysteve/pg-repack-shell:pg<PG_MAJOR>-<PG_REPACK_VERSION>
 ```
 
+Docker hub: [pg-repack-shell](https://hub.docker.com/repository/docker/fuhrysteve/pg-repack-shell)
+
 For example:
 
 - `fuhrysteve/pg-repack-shell:pg15-1.5.0`
