@@ -1,0 +1,25 @@
+# Ignore generated version file
+repack_versions.mk
+
+# Ignore temporary Dockerfile used for builds
+Dockerfile
+
+# Build context artifacts (if any)
+*.zip
+pg_repack-*/
+
+# Editor / OS noise
+*.swp
+*.swo
+*~
+.DS_Store
+
+# JetBrains / VSCode / etc.
+.idea/
+.vscode/
+
+# Logs or debug artifacts
+*.log
+
+# Shell history or scratchpads
+.history
